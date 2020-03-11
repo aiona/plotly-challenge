@@ -3,7 +3,7 @@
 
 // Create horizontal bar chart to display top 10 OTU
 
- var trace1 = {
+ /* var trace1 = {
     x: data.sample_values,
     y: data.otu_ids,
     name: 'Top 10 OTU',
@@ -13,7 +13,7 @@
         width: 1
     },
     type: 'bar'
-}; 
+};  */
 
 // Create bubble chart to display each sample
 
