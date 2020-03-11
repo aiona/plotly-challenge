@@ -1,15 +1,11 @@
-// Read in JSON file
-//const data = await d3.json("/static/data/samples.json")
-d3.json("../data/samples.json").then((data) => {
-    console.log(data);
 
-});
+
 
 // Create horizontal bar chart to display top 10 OTU
 
  var trace1 = {
-    x: [0,50,100,150],
-    y: data.sample_values,
+    x: data.sample_values,
+    y: data.otu_ids,
     name: 'Top 10 OTU',
     orientation: 'h',
     marker: {
@@ -28,3 +24,33 @@ d3.json("../data/samples.json").then((data) => {
 // Update plots when new sample is selected
 
     //Event handler?
+
+// Bonus
+function buildMetadata(sample) {
+    
+}
+
+function chart(sample) {
+    d3.json("samples.json").then((data) => {
+        var samples_list = data.samples;
+
+        var results = samples_list.filter(sample_item => sample_item.id == sample.id);
+        console.log(results);
+    });
+}
+
+function init() {
+
+// Read in JSON file
+    d3.json("samples.json").then((data) => {
+        console.log(data);
+        
+       var names_list = data.names;
+    
+    });
+
+    var firstSample = names_list[0];
+
+    // buildMetadata(firstSample)
+    chart(firstSample);
+}
