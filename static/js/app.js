@@ -1,6 +1,6 @@
 // Read in JSON file
 //const data = await d3.json("/static/data/samples.json")
-d3.json("/static/data/samples.json").then(function(data) {
+d3.json("../data/samples.json").then((data) => {
     console.log(data);
 
 });
